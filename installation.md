@@ -78,19 +78,19 @@ sudo systemctl restart containerd
 sudo systemctl enable containerd
 ```
 ```
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 ```
 ```
-sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
 ```
-```
+
 sudo cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d
-```
+
 ```
 apt update
 ```
 ```
-apt install -y kubelet kubeadm kubectl
+apt install -y kubelet kubeadm kubectl sudo apt install -y kubeadm=1.29.2 kubelet=1.29.2 kubectl=1.29.2
 ```
 ```
 apt-mark hold kubelet kubeadm kubectl
@@ -205,19 +205,19 @@ sudo systemctl restart containerd
 sudo systemctl enable containerd
 ```
 ```
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 ```
 ```
-sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
 ```
-```
+
 sudo cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d
-```
+
 ```
 apt update
 ```
 ```
-apt install -y kubelet kubeadm kubectl
+sudo apt install -y kubeadm=1.29.2 kubelet=1.29.2 kubectl=1.29.2
 ```
 ```
 apt-mark hold kubelet kubeadm kubectl
