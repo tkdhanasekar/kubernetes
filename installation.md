@@ -90,7 +90,7 @@ sudo cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d
 apt update
 ```
 ```
-apt install -y kubelet kubeadm kubectl sudo apt install -y kubeadm=1.29.2 kubelet=1.29.2 kubectl=1.29.2
+apt install -y kubeadm=1.29.2 kubelet=1.29.2 kubectl=1.29.2
 ```
 ```
 apt-mark hold kubelet kubeadm kubectl
@@ -217,7 +217,7 @@ sudo cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d
 apt update
 ```
 ```
-sudo apt install -y kubeadm=1.29.2 kubelet=1.29.2 kubectl=1.29.2
+apt install -y kubeadm=1.29.2 kubelet=1.29.2 kubectl=1.29.2
 ```
 ```
 apt-mark hold kubelet kubeadm kubectl
