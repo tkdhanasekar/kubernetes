@@ -316,3 +316,588 @@
 
 </details>
 
+<details>
+  <summary>Master List of K8S Topics</summary>
+
+---
+
+## 🧱 **Core Kubernetes Architecture**
+
+* Kubernetes architecture
+* Control plane components
+
+  * etcd
+  * API server
+  * Controller manager
+  * Scheduler
+* Node components
+
+  * Kubelet
+  * Kube proxy
+* Cluster configuration and initialization
+* Infrastructure setup
+* Cluster security and management
+* Cluster upgrade
+* Backup and restore methods
+* etcd in HA
+* etcdctl
+
+---
+
+## 🐳 **Containers & Runtimes**
+
+* What are containers
+* Container orchestration
+* Docker vs containerd
+* Container runtime interface (CRI)
+* Docker storage
+* Volume driver plugins in Docker
+* Docker service configuration
+* Docker securing the daemon
+* Docker networking
+
+---
+
+## ⚙️ **Core Kubernetes Concepts**
+
+* Pods
+* Pods with YAML
+* Multi-container pods
+* Multi-container pod design patterns
+* Init containers
+* Static pods
+* Commands and arguments
+* Environment variables
+* ConfigMaps
+* Secrets
+* Readiness probes
+* Liveness probes
+* DaemonSets
+* ReplicaSets
+* Deployments
+* Rolling updates and rollbacks
+* Deployment strategies (Blue-Green, Canary)
+* Services
+
+  * ClusterIP
+  * LoadBalancer
+  * Headless services
+* Ingress
+* Gateway API
+
+  * Need for Gateway API
+  * Introduction & resource model
+  * Configure gateway resource
+  * Expose deployment on gateway
+  * Traffic switching
+
+---
+
+## 🧭 **Scheduling and Placement**
+
+* Manual scheduling
+* Labels and selectors
+* Taints and tolerations
+* Node selectors
+* Node affinity
+* Taints and tolerations vs node affinity
+* Multiple schedulers
+* Configuring Kubernetes scheduler profiles
+
+---
+
+## 📦 **Storage & Persistence**
+
+* Container storage interface (CSI)
+* Volumes
+* Persistent Volumes (PV)
+* Persistent Volume Claims (PVC)
+* Using PVC in pods
+* Storage classes
+* Dynamic volume provisioning
+* StatefulSets
+
+---
+
+## 🔐 **Security**
+
+* Kubernetes security primitives
+* Authentication
+* Authorization
+* Kubeconfig
+* API groups
+* TLS basics & TLS in Kubernetes
+* PKI certificates and API
+* Role-based access control (RBAC)
+
+  * Cluster roles
+  * Service accounts
+* Attribute-based access control (ABAC)
+* Image security
+
+  * Scan images for vulnerabilities (Trivy)
+  * Sign and validate images
+  * ImagePolicyWebhook
+  * Minimize base image footprint
+* Security contexts
+* Pod security
+* Admission controllers
+
+  * Validating and mutating admission controllers
+* Network policies
+* Kubelet security
+* Secrets
+* Audit logging
+* Open Policy Agent (OPA)
+* Seccomp
+* AppArmor
+* SELinux basics
+* Linux capabilities
+* Container sandboxing (gVisor, Kata containers)
+* Runtime classes
+* mTLS
+* Multi-tenancy
+* Control plane isolation
+* Trust boundaries and data flow
+* Endpoint security
+* SSH hardening
+* Privilege escalation prevention
+* Minimize host OS footprint
+* Disable open ports & obsolete packages
+* UFW firewall basics
+* CIS benchmarks
+* Kube-bench
+* Falco
+* Threat detection and behavioral analytics
+* Compliance frameworks & supply chain compliance
+* Threat modelling frameworks
+* Automation and tooling
+
+---
+
+## 🌐 **Networking**
+
+* Cluster networking
+* Pod networking
+* Container networking
+* Network namespaces
+* Container Networking Interface (CNI)
+* Weave & IPAM Weave
+* CoreDNS
+* Switching, routing, gateways in Kubernetes
+* Network troubleshooting
+* Common networking issues
+
+---
+
+## 📈 **Scaling & Performance**
+
+* Scale applications
+* Autoscaling
+
+  * Horizontal Pod Autoscaler (HPA)
+  * Vertical Pod Autoscaler (VPA)
+  * Event-driven autoscaling with KEDA
+* Resource quotas and limits
+* Quality of Service (QoS)
+* API Priority and Fairness
+
+---
+
+## 🧩 **Configuration & Management**
+
+* Namespaces
+* Imperative vs Declarative
+* `kubectl apply` command
+* Configuring cluster components
+* Monitor cluster components
+* Managing application/container logs
+
+---
+
+## ⚒️ **Deployment & Delivery**
+
+* Infrastructure setup
+* Testing and validation
+* Advanced setup & deploy with kubeadm
+* Application delivery fundamentals
+* GitOps
+
+  * Push vs pull-based deployments
+  * CI/CD with GitOps
+  * ArgoCD
+
+---
+
+## 📦 **Packaging & Customization**
+
+* Helm overview
+* Install Helm
+* Helm concepts & components
+* Helm charts
+* Customizing Helm chart parameters
+* Lifecycle management with Helm
+* Kustomize overview
+* Kustomize vs Helm
+* Kustomize installation
+* `kustomize.yaml` file
+* Kustomize output
+* API version and kind
+* Managing directories
+* Transformers, patches, overlays, components
+
+---
+
+## ⚙️ **Extensibility & Operators**
+
+* Custom Resource Definitions (CRD)
+* Custom controllers
+* Operator framework
+* Kubernetes extension interfaces
+* Kubernetes Enhancement Proposal (KEP)
+* Kubernetes Special Interest Groups (SIG)
+
+---
+
+## 💡 **Workload Types**
+
+* Jobs
+* CronJobs
+* DaemonSets
+* Deployments
+* StatefulSets
+
+---
+
+## 🧠 **Monitoring, Logging & Reliability**
+
+* Monitor cluster components
+* Managing application/container logs
+* Prometheus
+* Application failure
+* Control plane failure
+* Worker node failure
+* Troubleshoot services & networking
+* Common networking issues
+* Troubleshooting API server, scheduler
+
+---
+
+## ☁️ **Cloud Native Ecosystem**
+
+* What is Cloud Native
+* Monoliths vs Microservices
+* Sidecars
+* Envoy
+* Istio
+* Serverless
+
+---
+
+## 💰 **Operations & Governance**
+
+* Cost management
+* SLO/SLA/SLI
+* SBOM (Software Bill of Materials)
+* KubeLinter
+* Artifact repository security
+* Mutable vs Immutable infrastructure
+
+---
+
+</details>
+
+<details>
+  <summary>Kubernetes Study Roadmap</summary>
+  
+---
+
+## **🧩 Stage 1: Foundations — Containers & Cloud-Native Basics**
+
+**Goal:** Understand containers, orchestration, and Kubernetes fundamentals.
+
+### 📘 Concepts
+
+* What are containers
+* Monoliths vs microservices
+* Cloud Native & CNCF landscape
+* Mutable vs immutable infrastructure
+* Container orchestration
+
+### 🛠️ Tools & Components
+
+* Docker basics
+* Docker vs Containerd
+* Container Runtime Interface (CRI)
+* Docker storage & networking
+* Volume driver plugins in Docker
+
+**Hands-on:**
+
+* Build and run a Docker container
+* Inspect images and layers (`docker history`, `docker inspect`)
+* Configure Docker networking
+
+---
+
+## **🏗️ Stage 2: Core Kubernetes Architecture**
+
+**Goal:** Learn how Kubernetes works internally.
+
+### ⚙️ Control Plane
+
+* API Server
+* Controller Manager
+* Scheduler
+* etcd
+* etcdctl
+* Cluster configuration & initialization
+* Cluster upgrade & HA setup
+
+### ⚙️ Node Components
+
+* Kubelet
+* Kube Proxy
+
+### 🔐 Core Configuration
+
+* kubeconfig
+* API groups
+* Cluster security & management
+
+**Hands-on:**
+
+* Set up a cluster with `kubeadm`
+* Inspect system pods in `kube-system`
+* Access the API using `kubectl proxy`
+
+---
+
+## **🧱 Stage 3: Core Kubernetes Resources**
+
+**Goal:** Deploy and manage workloads.
+
+### 🧩 Workloads
+
+* Pods (single/multi-container)
+* Multi-container pod design patterns
+* Init containers
+* Static pods
+* ReplicaSets
+* Deployments
+* DaemonSets
+* StatefulSets
+* Jobs & CronJobs
+
+### ⚙️ Configuration Management
+
+* Commands & arguments
+* Environment variables
+* ConfigMaps & Secrets
+
+### 🧭 Scheduling
+
+* Manual scheduling
+* Labels & selectors
+* Taints & tolerations
+* Node selectors & affinity
+* Scheduler profiles
+* Multiple schedulers
+
+**Hands-on:**
+
+* Deploy workloads with YAML
+* Schedule pods on specific nodes
+* Configure init & sidecar containers
+
+---
+
+## **🌐 Stage 4: Networking, Services & Storage**
+
+**Goal:** Learn how workloads communicate and persist data.
+
+### 🌐 Networking
+
+* Cluster networking
+* Pod networking
+* Container networking interface (CNI)
+* Weave & IPAM Weave
+* CoreDNS
+* Network namespaces
+* Network policies
+
+### 🚦 Service Exposure
+
+* Services (ClusterIP, NodePort, LoadBalancer, Headless)
+* Ingress
+* Gateway API
+
+  * Resource model
+  * Gateway resource configuration
+  * Expose deployments via gateway
+
+### 💾 Storage
+
+* Volumes
+* Persistent Volumes (PV)
+* Persistent Volume Claims (PVC)
+* Storage Classes
+* Dynamic volume provisioning
+* Container Storage Interface (CSI)
+
+**Hands-on:**
+
+* Create a PersistentVolume and PVC
+* Configure and test a NetworkPolicy
+* Expose an app via Ingress
+
+---
+
+## **⚙️ Stage 5: Advanced Operations & Scaling**
+
+**Goal:** Operate clusters efficiently and manage workloads dynamically.
+
+### 🔁 Application Lifecycle
+
+* Rolling updates and rollbacks
+* Blue-Green & Canary deployments
+* Scaling applications
+
+### 📈 Autoscaling
+
+* Horizontal Pod Autoscaler (HPA)
+* Vertical Pod Autoscaler (VPA)
+* Event-driven autoscaling with KEDA
+
+### ⚖️ Resource Management
+
+* Resource requests, limits & quotas
+* Quality of Service (QoS)
+* API Priority & Fairness
+
+### 🧠 Monitoring & Troubleshooting
+
+* Monitor cluster components
+* Manage logs
+* Troubleshoot networking, API server, scheduler
+* Application, control plane, worker node failures
+
+**Hands-on:**
+
+* Scale apps manually and via HPA
+* Simulate pod failures and observe recovery
+* Use metrics server and Prometheus
+
+---
+
+## **🔐 Stage 6: Kubernetes Security & Governance**
+
+**Goal:** Secure the cluster, workloads, and supply chain.
+
+### 🧰 Security Fundamentals
+
+* Kubernetes security primitives
+* Authentication & Authorization
+* Role-Based Access Control (RBAC)
+* Service Accounts
+* ABAC
+* API groups
+* TLS in Kubernetes
+* PKI certificates & API
+
+### 🛡️ Workload Security
+
+* Security contexts
+* Pod security
+* Admission controllers (Validating & Mutating)
+* Network policies
+* Secrets management
+* Image security (Trivy, signing, minimal base image)
+* Pod sandboxing (gVisor, Kata)
+* Runtime classes
+* Seccomp, AppArmor, SELinux
+* mTLS, multi-tenancy, control plane isolation
+
+### 🧠 Cluster Hardening
+
+* Kubelet security
+* Minimize host OS footprint
+* UFW firewall, SSH hardening
+* Restrict kernel modules & open ports
+* Audit logging
+* Kube-bench & CIS benchmarks
+* Falco runtime threat detection
+* OPA for policy enforcement
+
+### 📦 Supply Chain & Compliance
+
+* SBOM (Software Bill of Materials)
+* Artifact repository security
+* Compliance & threat modeling frameworks
+
+**Hands-on:**
+
+* Implement RBAC for restricted users
+* Apply a network policy to isolate workloads
+* Run `kube-bench` and Falco for auditing
+
+---
+
+## **🚀 Stage 7: Packaging, Automation & Ecosystem**
+
+**Goal:** Learn to automate deployments and extend Kubernetes.
+
+### 📦 Packaging & Templating
+
+* Helm overview & installation
+* Helm charts & components
+* Customizing Helm chart parameters
+* Lifecycle management with Helm
+* Kustomize overview vs Helm
+* Kustomize installation
+* Overlays, components, patches, transformers
+
+### 🧩 Extending Kubernetes
+
+* Custom Resource Definitions (CRD)
+* Custom controllers
+* Operator framework
+* Kubernetes Enhancement Proposals (KEP)
+* Kubernetes Special Interest Groups (SIG)
+
+### ⚙️ GitOps & Delivery
+
+* GitOps fundamentals
+* Push vs Pull-based deployments
+* CI/CD with GitOps
+* ArgoCD
+
+### 📊 Observability & Cost
+
+* Prometheus
+* SLO/SLA/SLI
+* Cost management
+
+**Hands-on:**
+
+* Package and deploy apps using Helm and Kustomize
+* Implement a GitOps workflow using ArgoCD
+* Extend Kubernetes with a simple custom controller
+
+---
+
+## 🌈 **Bonus: Cloud-Native and Service Mesh**
+
+* Sidecars
+* Envoy
+* Istio
+* Serverless on Kubernetes
+
+**Hands-on:**
+
+* Deploy a sample app with Istio sidecars
+* Configure mTLS using Istio
+
+---
+
+</details>
