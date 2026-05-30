@@ -1,15 +1,20 @@
+check for the validation kubernetes cluster
 ```
 kubectl get nodes
 ```
+Install Gateway API
 ```
 kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.5.1/standard-install.yaml
 ```
+Add the Traefik Helm Repository
 ```
 helm repo add traefik https://helm.traefik.io/traefik
 ```
+update the repo
 ```
 helm repo update
 ```
+Create a Helm Values File
 ```
 vim traefik-values.yaml
 ```
@@ -33,12 +38,15 @@ ports:
   websecure:
     port: 443
 ```
+Install Traefik
 ```
 helm install traefik traefik/traefik   --namespace traefik   --create-namespace   -f traefik-values.yaml
 ```
+Verify GatewayClass
 ```
 kubectl get gatewayclass
 ```
+Create a Gateway
 ```
 vim gateway.yaml
 ```
@@ -55,12 +63,15 @@ spec:
     protocol: HTTP
     port: 80
 ```
+Apply:
 ```
 kubectl apply -f gateway.yaml
 ```
+Verify:
 ```
 kubectl get gateway
 ```
+create service and deployment file for nginx app
 ```
 vim nginx-app.yaml
 ```
@@ -103,9 +114,11 @@ spec:
     - port: 80
       targetPort: 80
 ```
+Apply:
 ```
 kubectl apply -f nginx-app.yaml
 ```
+Create HTTPRoute
 ```
 vim httproute.yaml
 ```
@@ -127,13 +140,17 @@ spec:
         - name: nginx-service
           port: 80
 ```
+Apply:
 ```
 kubectl apply -f httproute.yaml
 ```
+Verify:
 ```
 kubectl get httproute
 ```
+point load balancer ip to dns
 nginx.hashlabs.in -> <LKE_LOADBALANCER_IP>
 
+check:
 http://nginx.hashlabs.in
 
