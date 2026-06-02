@@ -6,7 +6,7 @@ check for the validation of the cluster
 ```
 kubectl get nodes
 ```
-Install Gateway API
+## Install Gateway API
 ```
 kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.5.1/standard-install.yaml
 ```
@@ -14,7 +14,7 @@ Verify:
 ```
 kubectl get crds | grep gateway
 ```
-Install NGINX Gateway Fabric
+## Install NGINX Gateway Fabric
 ```
 helm install ngf oci://ghcr.io/nginx/charts/nginx-gateway-fabric --namespace nginx-gateway --create-namespace
 ```
@@ -26,6 +26,7 @@ Verify GatewayClass
 ```
 kubectl get gatewayclass
 ```
+## Install cert-manager
 Add Jetstack Helm repo
 ```
 helm repo add jetstack https://charts.jetstack.io
@@ -62,7 +63,7 @@ verify:
 ```
 kubectl get crds
 ```
-Create Let's Encrypt ClusterIssuer
+## Create Let's Encrypt ClusterIssuer
 ```
 vim clusterissuer.yaml
 ```
@@ -92,7 +93,7 @@ Apply:
 ```
 kubectl apply -f clusterissuer.yaml
 ```
-Create TLS Certificate
+## Create TLS Certificate
 ```
 vim certificate.yaml
 ```
@@ -113,7 +114,7 @@ spec:
   dnsNames:
     - orange.hashlabs.in
 ```
-Deploy orange Application
+## Deploy orange Application
 ```
 vim orange-app.yaml
 ```
@@ -163,7 +164,7 @@ apply:
 ```
 kubectl apply -f orange-app.yaml
 ```
-Create Gateway
+## Create Gateway
 ```
 vim gateway.yaml
 ```
@@ -245,7 +246,7 @@ Verify secret:
 ```
 kubectl get secret orange-hashlabs-tls
 ```
-Create HTTPRoute
+## Create HTTPRoute
 ```
 vim httproute.yaml
 ```
@@ -273,7 +274,7 @@ Apply:
 ```
 kubectl apply -f httproute.yaml
 ```
-Create a dedicated redirect route.
+## Create a dedicated redirect route.
 ```
 vim redirect.yaml
 ```
