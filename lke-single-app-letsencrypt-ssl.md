@@ -93,27 +93,6 @@ Apply:
 ```
 kubectl apply -f clusterissuer.yaml
 ```
-## Create TLS Certificate
-```
-vim certificate.yaml
-```
-```
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: orange-hashlabs-cert
-  namespace: default
-
-spec:
-  secretName: orange-hashlabs-tls
-
-  issuerRef:
-    name: letsencrypt-prod
-    kind: ClusterIssuer
-
-  dnsNames:
-    - orange.hashlabs.in
-```
 ## Deploy orange Application
 ```
 vim orange-app.yaml
@@ -215,6 +194,27 @@ spec:
 apply:
 ```
 kubectl apply -f gateway.yaml
+```
+## Create TLS Certificate
+```
+vim certificate.yaml
+```
+```
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: orange-hashlabs-cert
+  namespace: default
+
+spec:
+  secretName: orange-hashlabs-tls
+
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+
+  dnsNames:
+    - orange.hashlabs.in
 ```
 apply certificate.yaml
 ```
