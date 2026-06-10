@@ -377,6 +377,13 @@ spec:
     - path:
         type: PathPrefix
         value: /app1
+        
+    filters:
+    - type: URLRewrite
+      urlRewrite:
+        path:
+          type: ReplacePrefixMatch
+          replacePrefixMatch: /
 
     backendRefs:
     - name: app1-service
@@ -386,6 +393,13 @@ spec:
     - path:
         type: PathPrefix
         value: /app2
+        
+    filters:
+    - type: URLRewrite
+      urlRewrite:
+        path:
+          type: ReplacePrefixMatch
+          replacePrefixMatch: /
 
     backendRefs:
     - name: app2-service
