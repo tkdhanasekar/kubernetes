@@ -435,7 +435,7 @@
   
 # CKS
 
-## Understanding the Kubernets Attack Surface
+## Understanding the Kubernetes Attack Surface
 
 * The 4Cs if Cloud Native Security
 
