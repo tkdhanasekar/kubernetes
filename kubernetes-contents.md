@@ -337,6 +337,14 @@
 * Common Networking Issues
 * Troubleshooting the API Server, Scheduler
 * Networking Troubleshooting
+
+## Exam Domains & Weighting:
+
+* Troubleshooting (30%)Cluster & Node Troubleshoot: Diagnose issues with cluster components (e.g., etcd, kube-apiserver) and worker nodes.Networking & Services: Troubleshoot service discovery, CoreDNS, and network issues.Application Failures: Monitor resources, evaluate logs (kubectl logs), and interpret container output streams.
+* Cluster Architecture, Installation & Configuration (25%)Installation: Prepare underlying infrastructure and provision clusters using kubeadm.Configuration: Implement high-availability (HA) control planes and manage etcd backups.Access Control: Manage Role-Based Access Control (RBAC), service accounts, and new user contexts.Lifecycle & Extensions: Upgrade clusters, use Helm and Kustomize, and configure CRI/CSI/CNI interfaces.
+* Services & Networking (20%)Traffic Management: Utilize ClusterIP, NodePort, and LoadBalancer service types.Ingress & DNS: Configure Ingress resources, Ingress controllers, Gateway API, and CoreDNS.Security Policies: Define and enforce network policies.
+* Workloads & Scheduling (15%)Application Primitives: Deploy self-healing applications using Deployments, StatefulSets, and DaemonSets.Scheduling: Configure node affinity, taints/tolerations, and resource requests/limits.Configuration: Inject application configuration using ConfigMaps and Secrets.Scaling & Updates: Implement rolling updates, rollbacks, and workload autoscaling.
+* Storage (10%)Volume Configuration: Configure PersistentVolumes (PVs) and PersistentVolumeClaims (PVCs).Access & Policies: Understand volume modes, access modes, and reclaim policies.Storage Classes: Implement StorageClasses for dynamic provisioning.
 </details>
 <details>
   <summary>CKAD</summary>
@@ -429,6 +437,14 @@
 * Helm Components
 * Customizing Helm Chart Params
 * Lifecycle Management with Helm
+
+## Exam Domains & Weighting:
+
+* Application Design and Build (20%): Container images, Jobs/CronJobs, multi-container Pod design, and storage volumes.
+* Application Environment, Configuration and Security (25%): RBAC, resource limits/quotas, CRDs, ConfigMaps, Secrets, ServiceAccounts, and SecurityContexts.
+* Services and Networking (20%): Troubleshooting service access, Ingress rules, and network policies.
+* Application Deployment (20%): Deployments, rolling updates, rollbacks, deployment strategies, and Helm.
+* Application Observability and Maintenance (15%): Probes, logging, debugging, and API updates.
 </details>
 <details>
   <summary>CKS</summary>
@@ -534,4 +550,13 @@
 * Detect all attack phases, regardless of location or spread
 * Conduct deep analysis to identify bad actors in the environment
 * Mutable vs Immutable Infrastructure
+
+## Exam Domains & Weighting:
+
+* Cluster Setup (15%)Secure Kubernetes components (etcd, API server, kubelet) using CIS benchmarks.Implement Network Policies and TLS-enabled Ingress.Minimize host node access and secure metadata.
+* Cluster Hardening (15%)Enforce RBAC best practices and secure service accounts.Restrict API access and keep cluster components updated.
+* System Hardening (10%)Apply least-privilege principles to host and container environments.Utilize security tools like AppArmor and seccomp.
+* Minimize Microservice Vulnerabilities (20%)Manage secrets securely, including encryption at rest.Isolate workloads using techniques like gVisor or Kata Containers.Enforce mTLS for pod-to-pod communication.
+* Supply Chain Security (20%)Secure CI/CD pipelines, image registries, and utilize SBOMs.Create small, non-root container images and scan for vulnerabilities.
+* Monitoring, Logging, and Runtime Security (20%)Detect threats and monitor system calls at the container/host level.Use tools for behavioral analysis and ensure container immutability.
 </details>
